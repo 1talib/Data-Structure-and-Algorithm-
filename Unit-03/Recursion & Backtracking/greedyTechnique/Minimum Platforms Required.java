@@ -64,3 +64,44 @@ public class Main{
     System.out.println(count);
   }
 }
+// import java.util.*; 
+//  class Main{
+//    public static void main(String args[]){ 
+//        Scanner sc = new Scanner(System.in);
+//      int n= sc.nextInt();
+//      int arr[] = new int[n]; 
+//      int drr[] = new int[n];
+//       String chk= ""; 
+//      for (int i=0; i<n; i++){
+//         chk = sc.next(); 
+//         String sam[] = chk.split(":");
+//        arr[i]= Integer.parseInt(sam[0])*100+Integer.parseInt(sam[1]);
+//       }
+//        for(int i=0; i<n; i++){
+//            chk = sc.next();
+//         String sam[] = chk.split(":");
+//         drr[i] = Integer.parseInt(sam[0])*100+Integer.parseInt(sam[1]);
+//        }
+//            Arrays.sort(arr); 
+//            Arrays.sort (drr);
+//          System.out.println(platforms (arr, drr, n));
+//        }
+//            public static int platforms (int arr[], int drr[], int n){ 
+//                int max = 1;
+//                int count = 0; 
+//                int i = 0; 
+//                int j = 0; 
+//                while(i<n && j<n){
+//                 if(arr[i]<=drr[j]){ 
+//                     count++; 
+//                     i++; 
+//                     }else{
+//                         count--; 
+//                         j++;
+//                     }
+//                         max = Math.max(max, count);
+//                     }
+//                         return max;
+//                }
+//            }
+      
