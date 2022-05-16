@@ -87,3 +87,27 @@ static LinkedHashSet<String> set2 = new LinkedHashSet<>();
             System.out.println(ans); 
          }
     }
+// import java.util.*; 
+// class Main{
+//     public static int solve (char[]a,char[]b,int n,int m){
+//         if(n==0 || m==0) return 0;
+//     else if (a[n-1]==b[m-1]) return 1+solve(a,b,n-1,m-1); 
+//     else return Math.max(solve(a,b,n,m-1),solve(a,b,n-1,m)) ;
+//     }
+//     public static void main(String[]args){
+//         Scanner sc = new Scanner(System.in); 
+//         String virat = sc.next(); 
+//         char [] v = new char [virat.length()]; 
+//         for(int i=0; i<virat.length();i++){ 
+//             v[i]=virat.charAt(i);
+//         }
+//             String rohit = sc.next(); 
+//             char [] r = new char [rohit.length()]; 
+//             for (int i=0; i<rohit.length();i++){ 
+//                 r[i]=rohit.charAt(i); 
+//             }
+//                 int n=virat.length(); 
+//                 int m=rohit.length(); 
+//                 System.out.print(solve(v,r,n, m));
+//     }
+// }
