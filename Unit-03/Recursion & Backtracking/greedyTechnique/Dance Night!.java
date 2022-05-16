@@ -72,3 +72,38 @@ class Main {
     }
   }
 }
+// import java.io.*;
+// import java.lang.*;
+// import java.util.*;
+ 
+//  class Main{
+//      public static boolean check(int [] girls , int [] boys){
+//          int i = 0;
+//          int j = 0;
+//          if (boys.length > girls.length) return false;
+//          while( i<boys.length && j < girls.length) {
+//              if (boys[i] <= girls[j]) return false;
+//              i++;
+//              j++;
+//          }
+//          return true;
+//      }
+//  public static void main (String [] args){
+//      Scanner sc = new Scanner(System.in);
+//      int t = sc.nextInt();
+//      while(t-- != 0){
+//          int n = sc.nextInt();
+//          int m = sc.nextInt();
+//          int[] boys = new int[n];
+//          int[] girls = new int[m];
+//          for( int i= 0; i < n; i++) boys[i] = sc.nextInt();
+//          for( int i= 0; i < m; i++) girls[i] = sc.nextInt();
+//          Arrays.sort(boys);
+//          Arrays.sort(girls);
+//          if(check(girls,boys)) System.out.println("YES");
+//          else {
+//              System.out.println("NO");
+//           }
+//        } 
+//      }
+//   }
