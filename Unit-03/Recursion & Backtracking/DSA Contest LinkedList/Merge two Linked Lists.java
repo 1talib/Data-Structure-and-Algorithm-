@@ -52,35 +52,56 @@ class Node{
   }
 }
 */
-class Solution{
-  public Node mergeTwoLinkedList(Node a,Node b){
-    if(a==null) return b;
-    else if(b==null) return a;
-    
-    Node temp, head;
-    
-    if(a.data < b.data) {
-      temp = head = a;
-      a = a.next;
-    } else {
-      temp = head = b;
-      b= b.next;
-    }
-    while(a!=null && b!=null) {
-      if(a.data<b.data) {
-        temp.next = a;
+class Solution{ 
+    public Node mergeTwoLinkedList(Node a , Node b){
+        List<Integer> list = new ArrayList<>(); 
+        while (a != null){ 
+        list.add(a.data); 
         a = a.next;
-      } else {
-        temp.next = b;
-        b = b.next;
-      }
-      temp = temp.next;
+        }
+        while (b != null){ 
+        list.add(b.data); 
+        b = b.next; 
+        } 
+      Collections.sort(list); 
+      Node ans = new Node(list.get(0));
+      Node temp = ans; 
+      for (int i = 1; i < list.size(); i++){
+          temp.next = new Node (list.get(i)); 
+          temp = temp.next; 
+          } 
+        return ans;
+       }
     }
-    if(a== null && b!=null) {
-      temp.next = b;
-    } else if(b==null && a!=null) {
-      temp.next = a;
-    }
-    return head;
-  }
-}
+// class Solution{
+//   public Node mergeTwoLinkedList(Node a,Node b){
+//     if(a==null) return b;
+//     else if(b==null) return a;
+    
+//     Node temp, head;
+    
+//     if(a.data < b.data) {
+//       temp = head = a;
+//       a = a.next;
+//     } else {
+//       temp = head = b;
+//       b= b.next;
+//     }
+//     while(a!=null && b!=null) {
+//       if(a.data<b.data) {
+//         temp.next = a;
+//         a = a.next;
+//       } else {
+//         temp.next = b;
+//         b = b.next;
+//       }
+//       temp = temp.next;
+//     }
+//     if(a== null && b!=null) {
+//       temp.next = b;
+//     } else if(b==null && a!=null) {
+//       temp.next = a;
+//     }
+//     return head;
+//   }
+// }
