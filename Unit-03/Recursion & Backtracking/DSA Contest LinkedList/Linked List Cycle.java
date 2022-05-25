@@ -64,17 +64,30 @@ class Node{
   }
 }
 */
-class Solution{
-  public static boolean checkForCycle(Node head){
-    //write your code here.
-     Node SlowTrain=head;
-     Node FastTrain=head;
-    if(head == null || head.next == null) return false;
-    while(FastTrain!=null && FastTrain.next!=null){
-      FastTrain=FastTrain.next.next;
-      if(FastTrain==SlowTrain) return true;
-      SlowTrain=SlowTrain.next;
-    }
-    return false;
-  }
+class Solution{ 
+   public static boolean checkForCycle(Node head){ 
+     // write your code here . 
+     Node fast = head; 
+     Node slow = head; 
+     while (fast != null && fast.next != null){ 
+    slow = slow.next; 
+    fast = fast.next.next; 
+    if(slow == fast) return true; 
+     }
+     return false;
+   }
 }
+// class Solution{
+//   public static boolean checkForCycle(Node head){
+//     //write your code here.
+//      Node SlowTrain=head;
+//      Node FastTrain=head;
+//     if(head == null || head.next == null) return false;
+//     while(FastTrain!=null && FastTrain.next!=null){
+//       FastTrain=FastTrain.next.next;
+//       if(FastTrain==SlowTrain) return true;
+//       SlowTrain=SlowTrain.next;
+//     }
+//     return false;
+//   }
+// }
