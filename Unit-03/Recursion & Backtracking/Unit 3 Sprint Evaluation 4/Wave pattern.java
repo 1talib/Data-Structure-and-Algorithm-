@@ -79,41 +79,60 @@ No three consecutive nodes are in ascending nor in descending order. Hence, it c
  * }
  */
 
-class Solution {
-public boolean checkWavePattern(ListNode head) {
-		// Write your code here
-      ListNode temp=head;
-      int n=temp.val;
-      temp=temp.next;
-      boolean value=true;
-      if(temp.val<n) value=false;
-      int pointer=0;
-      n=temp.val;
-      temp=temp.next;
-      if(value){
-        while(temp!=null){
-          if(pointer%2==0) {
-            if(n<temp.val) return false;
-          }else{
-            if(n>temp.val) return false;
-          }
-          n=temp.val;
-          temp=temp.next;
-          pointer++;
-        }
-      }
-      else{
-        while(temp!=null){
-          if(pointer%2==0){
-            if(n>temp.val) return false;
-          }else{
-            if(n<temp.val) return false;
-          }
-          n=temp.val;
-          temp=temp.next;
-          pointer++;
-        }
-      }
-      return true;
-	}
-}	
+// class Solution {
+// public boolean checkWavePattern(ListNode head) {
+// 		// Write your code here
+//       ListNode temp=head;
+//       int n=temp.val;
+//       temp=temp.next;
+//       boolean value=true;
+//       if(temp.val<n) value=false;
+//       int pointer=0;
+//       n=temp.val;
+//       temp=temp.next;
+//       if(value){
+//         while(temp!=null){
+//           if(pointer%2==0) {
+//             if(n<temp.val) return false;
+//           }else{
+//             if(n>temp.val) return false;
+//           }
+//           n=temp.val;
+//           temp=temp.next;
+//           pointer++;
+//         }
+//       }
+//       else{
+//         while(temp!=null){
+//           if(pointer%2==0){
+//             if(n>temp.val) return false;
+//           }else{
+//             if(n<temp.val) return false;
+//           }
+//           n=temp.val;
+//           temp=temp.next;
+//           pointer++;
+//         }
+//       }
+//       return true;
+// 	}
+// }	
+class Solution{ 
+     public boolean checkWavePattern(ListNode head){ 
+         int last = -1; 
+         int sign = -1; 
+         for (int i = 0; head != null; i++, head = head.next){
+        if (i == 0){ 
+        last = head.val;
+        } else if (last < head.val && (sign == -1 || sign == 0 )){ 
+        sign = 1; 
+        } else if (last > head.val && ( sign == -1 || sign == 1 )){ 
+        sign = 0; 
+        } else { 
+        return false; 
+        } 
+       last = head.val; 
+         } 
+         return true;
+     }
+ }
