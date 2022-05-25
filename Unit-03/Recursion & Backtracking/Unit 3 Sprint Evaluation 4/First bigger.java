@@ -42,28 +42,54 @@ Sample Output 1
 
 66
 63*/
-import java.util.*;
-class Main{
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
-        int[] arr = new int[num];
-        ArrayList<Integer> array = new ArrayList<Integer>();
-        for(int i=0;i<num;i++){
-            arr[i] = sc.nextInt();
-        }
-        int tc = sc.nextInt();
-        for(int j=0;j<tc;j++){
-            int k = sc.nextInt();
-            Arrays.sort(arr);
-            int ans = -1;
-            for(int i=0;i<num;i++){
-                if(arr[i]>k){
-                   ans = arr[i];
-                   break;
+import java.io.*;
+import java.lang.*;
+import java.util.*; 
+class Main{ 
+    public static int solve (int[] arr, int k){ 
+        int ans = Integer.MAX_VALUE; 
+        for (int i = 0; i < arr.length; i++){ 
+            if (arr[i] > k){ 
+            ans = Math.min(arr[i], ans); 
                 }
-            }
-            System.out.println(ans);
-        }
+            } 
+        if (ans == Integer.MAX_VALUE) return -1; 
+        return ans; 
+      } 
+    public static void main (String[] args){ 
+        Scanner s = new Scanner(System.in); 
+        int n = s.nextInt(); 
+        int[] arr = new int [n]; 
+        for (int i = 0; i < arr.length; i++) arr[i] = s.nextInt(); 
+        int q = s.nextInt(); 
+        while (q--!=0){ 
+            int k = s.nextInt(); 
+            System.out.println(solve(arr, k)); 
+        } 
     }
 }
+// import java.util.*;
+// class Main{
+//     public static void main(String[] args){
+//         Scanner sc = new Scanner(System.in);
+//         int num = sc.nextInt();
+//         int[] arr = new int[num];
+//         ArrayList<Integer> array = new ArrayList<Integer>();
+//         for(int i=0;i<num;i++){
+//             arr[i] = sc.nextInt();
+//         }
+//         int tc = sc.nextInt();
+//         for(int j=0;j<tc;j++){
+//             int k = sc.nextInt();
+//             Arrays.sort(arr);
+//             int ans = -1;
+//             for(int i=0;i<num;i++){
+//                 if(arr[i]>k){
+//                    ans = arr[i];
+//                    break;
+//                 }
+//             }
+//             System.out.println(ans);
+//         }
+//     }
+// }
